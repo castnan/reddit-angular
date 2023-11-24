@@ -20,8 +20,7 @@ export class FeedMainPage implements OnInit {
     const state = this.router.getCurrentNavigation()?.extras.state;
     this.results = state ? state['searchData'] : undefined;
     this.sharedDataService.searchData$.subscribe((data) => {
-      console.log('DADOS ATUALIZADOS NO FEED MAIN TS', data);
-      this.searchData = data;  // Atualiza a variável com os dados
+      this.searchData = data;  
     });
   }
 }

@@ -1,16 +1,20 @@
 <div class="col-lg-8 col-12 mt-3 mx-auto" (scroll)="onScroll($event)">
   <div *ngIf="visibleResults && visibleResults.length > 0">
-     <button class="btn btn-primary scroll-to-top-btn" (click)="scrollToTop()">
-    <i class="bi bi-arrow-up-circle"></i> Rolar para Cima
-  </button>
+    <button class="btn btn-primary scroll-to-top-btn" (click)="scrollToTop()">
+      <i class="bi bi-arrow-up-circle"></i> Rolar para Cima
+    </button>
     <div *ngFor="let result of visibleResults">
       <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
         <div class="d-flex">
-          <img src="" class="custom-block-image img-fluid" alt="">
+          <img src="../../../assets/images/icon-green.jpg" class="custom-block-image img-fluid" alt="">
+          <h3  class="mb-2">{{result.data.icon_img}}</h3>
           <div class="custom-block-topics-listing-info d-flex">
             <div>
               <h5 class="mb-2">{{ result.data.title }}</h5>
-              <p class="mb-0">{{ result.data.num_comments }}</p>
+              <p class="mb-0">
+                <i class="bi bi-chat"></i> {{ result.data.num_comments }}
+              </p>
+              <p class="mb-0">{{ result.data.url }}</p>
               <a href="topics-detail.html" class="btn custom-btn mt-3 mt-lg-4">Learn More</a>
             </div>
             <span class="badge bg-design rounded-pill ms-auto">{{ result.data.numcoments }}</span>
@@ -20,10 +24,6 @@
     </div>
   </div>
 </div>
-
-
-  
-  <div *ngIf="!results || results.length === 0">
-    <p>Nenhum resultado encontrado.</p>
-  </div>
-  
+<div *ngIf="!results || results.length === 0">
+  <p>Nenhum resultado encontrado.</p>
+</div>

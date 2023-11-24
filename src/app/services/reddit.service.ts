@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { ConfigService } from './config.service';
 
 @Injectable({
@@ -14,8 +15,13 @@ export class RedditService {
   }
 
   searchSubreddit(subreddit: string): Observable<any> {
-    const apiUrl = `${this.redditApiUrl}r/gamedev/.json`;
-   
-    return this.http.get(apiUrl);
+    const apiUrl = `${this.redditApiUrl}r/${subreddit}/.json`;
+
+    return this.http.get(apiUrl).pipe(
+      catchError((error) => {
+        return error
+      })
+    );
   }
+
 }

@@ -1,5 +1,5 @@
 .custom-block {
-    border-radius: var(--border-radius-medium);
+    border-radius: 60px;
     position: relative;
     overflow: hidden;
     padding: 30px;
@@ -8,7 +8,7 @@
   }
   
   .custom-block:hover {
-    background-color: var(--secondary-color);
+    background-color: #eb6d14;
     transform: translateY(-3px);
   }
   

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { RedditService } from '../../services/reddit.service';
 import { Router } from '@angular/router';
 import { SharedDataService } from '../../services/shared-data.service';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -13,6 +13,7 @@ export class SearchComponent {
   searchQuery: string = 'FullDev';
 
   constructor(
+    private toastr: ToastrService,
     private redditService: RedditService,
     private router: Router,
     private sharedDataService: SharedDataService
@@ -26,8 +27,7 @@ export class SearchComponent {
           this.router.navigate(['/feed-main']);
         },
         error: (error) => {
-          console.error('Erro na pesquisa:', error);
-        }
+          this.toastr.error('Ocorreu um erro durante a pesquisa. Tente novamente.', 'Erro');        }
       });
     }
   }

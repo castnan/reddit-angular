@@ -5,20 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './components/search/search.component';
 import { HomeComponent } from './pages/home/home.page';
-import { PageContainerComponent } from './components/page-container/page-container.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FeedMainPage } from './pages/feed-main/feed-main.page';
 import { ListModalComponent } from './components/list-modal/list-modal.component';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     FeedMainPage,
     AppComponent,
     SearchComponent,
     HomeComponent,
-    PageContainerComponent,
     ListModalComponent,
   ],
   imports: [
+    ToastrModule.forRoot(),
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
