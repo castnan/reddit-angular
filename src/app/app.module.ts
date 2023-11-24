@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './components/search/search.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PageContainerComponent } from './components/page-container/page-container.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,6 +16,7 @@ import { PageContainerComponent } from './components/page-container/page-contain
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule
   ],
