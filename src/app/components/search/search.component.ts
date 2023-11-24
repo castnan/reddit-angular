@@ -1,6 +1,8 @@
+// search.component.ts
 import { Component } from '@angular/core';
 import { RedditService } from '../../services/reddit.service';
 import { Router } from '@angular/router';
+import { SharedDataService } from '../../services/shared-data.service';
 
 @Component({
   selector: 'app-search',
@@ -9,24 +11,24 @@ import { Router } from '@angular/router';
 })
 export class SearchComponent {
   searchQuery: string = 'FullDev';
-  constructor(private redditService: RedditService, private router: Router) {}
+
+  constructor(
+    private redditService: RedditService,
+    private router: Router,
+    private sharedDataService: SharedDataService
+  ) {}
 
   search() {
     if (this.searchQuery.trim() !== '') {
-      this.redditService.searchSubreddit(this.searchQuery).subscribe(
-        (result) => {
-          this.router.navigate(['/feed-main']).then((navigationSuccess) => {
-            if (navigationSuccess) {
-              console.log('Navegação concluída com sucesso!');
-            } else {
-              console.error('Erro na navegação');
-            }
-          });
+      this.redditService.searchSubreddit(this.searchQuery).subscribe({
+        next: (result) => {
+          this.sharedDataService.updateSearchData(result.data.children);
+          this.router.navigate(['/feed-main']);
         },
-        (error) => {
+        error: (error) => {
           console.error('Erro na pesquisa:', error);
         }
-      );
+      });
     }
   }
 }

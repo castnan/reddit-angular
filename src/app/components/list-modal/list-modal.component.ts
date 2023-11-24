@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+// No componente app-list-modal.ts
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-list-modal',
   templateUrl: './list-modal.component.html',
-  styleUrl: './list-modal.component.css'
+  styleUrls: ['./list-modal.component.css']
 })
 export class ListModalComponent {
-items: any;
-
+  @Input() results: any[] | undefined;
 }

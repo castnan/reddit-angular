@@ -11,6 +11,7 @@ import { FeedMainPage } from './pages/feed-main/feed-main.page';
 import { ListModalComponent } from './components/list-modal/list-modal.component';
 @NgModule({
   declarations: [
+    FeedMainPage,
     AppComponent,
     SearchComponent,
     HomeComponent,

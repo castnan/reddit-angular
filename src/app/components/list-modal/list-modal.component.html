@@ -1,16 +1,15 @@
-<div class="container mt-5">
-    <div class="row" *ngFor="let item of items">
-      <div class="col-2" id="icons">
-        <img [src]="item.icon" class="icons" alt="Ícone" />
-      </div>
-      <div class="col-8">
-        <div></div>
-        <p class="text-title">{{ item.title }}</p>
-        <p class="text-sub">{{ item.subtitle }}</p>
-      </div>
-      <div class="col-2" id="icons">
-        <img [src]="item.nextIcon" class="rounded float-right" alt="Próxima Ícone" />
+<!-- list-modal.component.html -->
+
+<div *ngIf="results && results.length > 0">
+    <div *ngFor="let result of results">
+      <div>
+        <h2>{{ result.data.title }}</h2>
+       
       </div>
     </div>
+  </div>
+  
+  <div *ngIf="!results || results.length === 0">
+    <p>Nenhum resultado encontrado.</p>
   </div>
   
