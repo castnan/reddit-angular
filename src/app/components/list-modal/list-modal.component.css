@@ -39,5 +39,10 @@
   .custom-block-topics-listing .custom-block-image {
     width: 200px;
   }
-  
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
   

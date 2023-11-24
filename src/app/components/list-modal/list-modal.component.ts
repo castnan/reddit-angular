@@ -1,5 +1,4 @@
-// list-modal.component.ts
-import { Component, Input, OnInit, HostListener } from '@angular/core';
+import { Component, Input, OnInit, HostListener, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-list-modal',
@@ -28,8 +27,10 @@ export class ListModalComponent implements OnInit {
       this.loadMoreItems();
     }
   }
-  
-
+  constructor(private el: ElementRef) {}
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
   loadMoreItems(): void {
     const start = (this.currentPage - 1) * this.itemsPerPage;
     const end = start + this.itemsPerPage;
