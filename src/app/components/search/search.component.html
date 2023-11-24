@@ -1,11 +1,13 @@
 
-<div class="card-body mb-3">
-  <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Digite sua pesquisa" [(ngModel)]="searchQuery">
-    <div class="input-group-append">
-      <button class="btn btn-primary btn-sm mr-2" type="button" [disabled]="!searchQuery" (click)="search()">Prosseguir</button>    </div>
+
+<form method="get" class="custom-form mt-4 pt-2 mb-lg-0 mb-5" role="search">
+  <div class="input-group input-group-lg">
+      <span class="input-group-text bi-mic-fill" id="basic-addon1">
+          
+      </span>
+
+      <input name="keyword" type="search" class="form-control" id="keyword" placeholder="Busque subrredit ..."  [(ngModel)]="searchQuery" aria-label="Prosseguir">
+
+      <button type="submit" class="form-control" [disabled]="!searchQuery"  [ngClass]="{'disabled-button': !searchQuery}" (click)="search()">Prosseguir </button>
   </div>
-  <button class="btn btn-secondary btn-sm" type="button">
-    <i class="bi bi-mic-fill"></i> Pesquisar por Áudio
-  </button>
-</div>
+</form>

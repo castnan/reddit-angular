@@ -1,0 +1,16 @@
+<div class="container mt-5">
+    <div class="row" *ngFor="let item of items">
+      <div class="col-2" id="icons">
+        <img [src]="item.icon" class="icons" alt="Ícone" />
+      </div>
+      <div class="col-8">
+        <div></div>
+        <p class="text-title">{{ item.title }}</p>
+        <p class="text-sub">{{ item.subtitle }}</p>
+      </div>
+      <div class="col-2" id="icons">
+        <img [src]="item.nextIcon" class="rounded float-right" alt="Próxima Ícone" />
+      </div>
+    </div>
+  </div>
+  

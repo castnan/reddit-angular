@@ -8,12 +8,14 @@ import { HomeComponent } from './pages/home/home.page';
 import { PageContainerComponent } from './components/page-container/page-container.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FeedMainPage } from './pages/feed-main/feed-main.page';
+import { ListModalComponent } from './components/list-modal/list-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     HomeComponent,
     PageContainerComponent,
+    ListModalComponent,
   ],
   imports: [
     BrowserModule,

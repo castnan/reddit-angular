@@ -15,7 +15,6 @@ export class SearchComponent {
     if (this.searchQuery.trim() !== '') {
       this.redditService.searchSubreddit(this.searchQuery).subscribe(
         (result) => {
-          console.log(result.data.children)
           this.router.navigate(['/feed-main']).then((navigationSuccess) => {
             if (navigationSuccess) {
               console.log('Navegação concluída com sucesso!');

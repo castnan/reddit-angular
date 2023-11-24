@@ -1,16 +1,6 @@
-.card {
-  box-sizing: border-box;
-  padding: 1.5rem 0.5rem 1.5rem 0.5rem;
-  background-color: #fff;
-  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  width: 100%;
-  margin-left: 0rem !important;
-  }
-  
-  .rounded-logo {
-    width: 50px;
-    height: 50px;
+ .rounded-logo {
+    width: 100px;
+    height: 100px;
   }
 
   .img-fluid:hover {
@@ -39,4 +29,48 @@
     100% {
       transform: scale3d(1, 1, 1);
     }
+  }
+
+
+  
+  .form-floating>label {
+    padding-left: 20px;
+  }
+
+  
+  .home-section {
+    background-image: linear-gradient(15deg, #154922 0%, #77c082 100%);
+    position: relative;
+    overflow: hidden;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    height: 100vh; 
+    margin: 0; 
+    padding: 0; 
+  }
+  
+  
+  .home-section .input-group {
+    background-color: var(--white-color);
+    border-radius: 100px;
+    padding: 10px 15px;
+  }
+  
+  .home-section .input-group-text {
+    background-color: transparent;
+  }
+
+  .home-section input[type="search"] {
+    border: 0;
+    box-shadow: none;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+  
+  .home-section button[type="submit"] {
+    background-color: #4F709C;
+    border: 0;
+    border-radius: 100px;
+    color: #ffff;
+    max-width: 150px;
   }
