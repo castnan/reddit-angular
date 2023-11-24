@@ -14,11 +14,8 @@ export class RedditService {
   }
 
   searchSubreddit(subreddit: string): Observable<any> {
-    const apiUrl = `${this.redditApiUrl}subreddits/search.json`;
-    const params = new HttpParams().set('q', subreddit);
-    const options = {
-      params,
-    };
-    return this.http.get(apiUrl,options);
+    const apiUrl = `${this.redditApiUrl}r/gamedev/.json`;
+   
+    return this.http.get(apiUrl);
   }
 }
