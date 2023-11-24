@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+  templateUrl: './home.page.html',
+  styleUrl: './home.page.css',
   animations: [
     trigger('fadeInOut', [
       state('void', style({

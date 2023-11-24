@@ -14,7 +14,6 @@ export class RedditService {
   }
 
   searchSubreddit(subreddit: string): Observable<any> {
-    console.log('BATEU AQUIIUIU')
     const apiUrl = `${this.redditApiUrl}subreddits/search.json`;
     const params = new HttpParams().set('q', subreddit);
     const options = {
