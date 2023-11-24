@@ -14,5 +14,12 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   ]
 })
 export class HomeComponent {
+  isSmallScreen = false;
 
+  ngOnInit(): void {
+    this.isSmallScreen = window.innerWidth < 576; 
+    window.addEventListener('resize', () => {
+      this.isSmallScreen = window.innerWidth < 576; 
+    });
+  }
 }
