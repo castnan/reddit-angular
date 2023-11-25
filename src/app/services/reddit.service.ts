@@ -23,5 +23,21 @@ export class RedditService {
       })
     );
   }
+  getSnoovatarImage(username: string): Promise<string> {
+    return fetch(`https://www.reddit.com/user/${username}/about.json`)
+      .then(response => response.json())
+      .then(data => {
+        const snoovatarImg = data.data.snoovatar_img;
+        return snoovatarImg || 'assets/images/icon-green.jpg';
+      })
+      .catch(error => {
+        console.error(`Erro ao obter informações do usuário ${username}:`, error);
+        return 'assets/images/icon-green.jpg';
+      });
+  }
+  getComments(subreddit: string, postId: string): Observable<any> {
+    const url = `${this.redditApiUrl}/${subreddit}/comments/${postId}.json`;
+    return this.http.get(url);
+  }
 
 }

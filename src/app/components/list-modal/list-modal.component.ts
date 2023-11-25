@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, HostListener, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { RedditService } from '../../services/reddit.service';
 
 @Component({
   selector: 'app-list-modal',
@@ -29,7 +30,7 @@ export class ListModalComponent implements OnInit {
     }
   }
 
-  constructor(private el: ElementRef, private router: Router) {}
+  constructor(private el: ElementRef, private router: Router,private redditService: RedditService) {}
 
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -49,24 +50,15 @@ export class ListModalComponent implements OnInit {
   }
 
   fetchSnoovatarImage(items: any): void {
-    const username = items.data.author; 
-    fetch(`https://www.reddit.com/user/${username}/about.json`)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data.data.snoovatar_img)
-        const snoovatarImg = data.data.snoovatar_img;
-  
-        if (snoovatarImg) {
-          items.snoovatarImg = snoovatarImg;
-        } else {
-          items.snoovatarImg = 'assets/images/icon-green.jpg';
-        }
-      })
-      .catch(error => console.error(`Erro ao obter informações do usuário ${username}:`, error));
+    const username = items.data.author;
+    this.redditService.getSnoovatarImage(username)
+      .then(snoovatarImg => {
+        items.snoovatarImg = snoovatarImg;
+      });
   }
   
 
   redirectToDetailPage(url: string): void {
-    this.router.navigate([''], { queryParams: { url } });
+    this.router.navigate(['comments'], { queryParams: { url } });
   }
 }
