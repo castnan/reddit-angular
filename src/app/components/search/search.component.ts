@@ -48,16 +48,4 @@ export class SearchComponent {
       this.toastr.error('A API de reconhecimento de fala não é suportada neste navegador.', 'Erro');
     }
   }
-  isMicrophoneMuted: boolean = true;
-
-  toggleMicrophone(): void {
-    this.isMicrophoneMuted = !this.isMicrophoneMuted;
-
-    // Adicione aqui a lógica para lidar com o estado do microfone
-    if (this.isMicrophoneMuted) {
-      // Microfone mutado, faça algo...
-    } else {
-      // Microfone não mutado, faça algo diferente...
-    }
-  }
 }
