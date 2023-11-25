@@ -36,7 +36,7 @@ export class RedditService {
       });
   }
   getComments(subreddit: string, postId: string): Observable<any> {
-    const url = `${this.redditApiUrl}/r/${subreddit}/comments/${postId}.json`;
+    const url = `${this.redditApiUrl}r/${subreddit}/comments/${postId}.json`;
     return this.http.get(url);
   }
 

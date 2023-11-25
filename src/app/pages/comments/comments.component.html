@@ -1,1 +1,57 @@
-<p>TELA COMENTÁRIOS!</p>
+<div class="main-container">
+<div class="post-container">
+    <h2>Autor: {{ authorPost[0]?.data?.author }}</h2>
+    <h4>{{ authorPost[0]?.data?.title }}</h4>
+    <p>{{ authorPost[0]?.data?.selftext }}</p>
+    <div class="row">
+      <div class="col-md-6">
+        <p>Pontuação: {{ authorPost[0]?.data?.ups }}</p>
+      </div>
+      <div class="col-md-6">
+        <p>Número de Comentários: {{ authorPost[0]?.data?.num_comments }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="otherComments.length > 0" class="comments-container">
+    <div *ngFor="let comment of otherComments" class="chat-message d-flex">
+      <div class="avatar-container">
+        <img *ngIf="comment.data.snoovatarImg" [src]="comment.data.snoovatarImg" class="rounded-circle" alt="User Avatar" width="40" height="40">      
+      </div>
+      <div class="message-container flex-grow-1 ml-3">
+        <div class="author-info font-weight-bold">{{ comment.data.author }}</div>
+        <div class="comment-body">{{ comment.data.body }}</div>
+  
+        <div class="counter green-counter" style="font-size: 14px;">Pontuação: {{ comment.data.ups }}</div>
+        <div class="counter green-counter" style="font-size: 14px;">Pontuação: {{ comment.num_comments}}</div>
+
+        <ng-container *ngIf="comment.data.url">
+          <a [href]="comment.data.url" target="_blank" class="btn btn-primary btn-sm d-block mx-auto mt-2">Link Externo</a>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="d-flex justify-content-center align-items-center">
+    <nav aria-label="Page navigation">
+      <ul class="pagination">
+        <li class="page-item" [class.disabled]="currentPage === 1">
+          <button class="page-link" (click)="loadPage(currentPage - 1)" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </button>
+        </li>
+        <li class="page-item">
+          <span class="page-link">Página {{ currentPage }} de {{ totalPages }}</span>
+        </li>
+        <li class="page-item" [class.disabled]="currentPage === totalPages">
+          <button class="page-link" (click)="loadPage(currentPage + 1)" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div> -->
+  
+
+
+  
+</div>

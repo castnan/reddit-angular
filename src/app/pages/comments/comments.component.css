@@ -1,0 +1,22 @@
+.post-container,
+.comments-container{
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.post-content,
+.chat-message {
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.avatar-container {
+  margin-right: 15px;
+}
+
+.main-container {
+  padding-top: 20px;
+}

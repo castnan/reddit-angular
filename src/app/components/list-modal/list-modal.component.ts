@@ -11,7 +11,6 @@ import { SharedDataService } from '../../services/shared-data.service';
 export class ListModalComponent implements OnInit {
   @Input() results: any[] | undefined;
   visibleResults: any[] = [];
-
   itemsPerPage = 5;
   currentPage = 1;
 
@@ -62,4 +61,6 @@ export class ListModalComponent implements OnInit {
     this.sharedDataService.updatePostData({ data: { children: [data] } });
     this.router.navigate(['comments'], { queryParams: { subreddit: data.subreddit ,id:data.id} });
   }
+
+  
 }

@@ -10,6 +10,7 @@ import { FeedMainPage } from './pages/feed-main/feed-main.page';
 import { ListModalComponent } from './components/list-modal/list-modal.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommentsComponent } from './pages/comments/comments.component';
 @NgModule({
   declarations: [
     FeedMainPage,
@@ -17,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SearchComponent,
     HomeComponent,
     ListModalComponent,
+    CommentsComponent
   ],
   imports: [
     ToastrModule.forRoot(),
