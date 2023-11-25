@@ -15,7 +15,7 @@ export class RedditService {
   }
 
   searchSubreddit(subreddit: string): Observable<any> {
-    const apiUrl = `${this.redditApiUrl}r/${subreddit}/.json`;
+    const apiUrl = `${this.redditApiUrl}r/${subreddit}/new.json`;
 
     return this.http.get(apiUrl).pipe(
       catchError((error) => {
