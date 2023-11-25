@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'feed-main', component: FeedMainPage },
+  { path: 'dialogues', component: HomeComponent },
 
 ];
 

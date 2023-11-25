@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, HostListener, ElementRef } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-list-modal',
   templateUrl: './list-modal.component.html',
@@ -15,7 +15,6 @@ export class ListModalComponent implements OnInit {
   ngOnInit(): void {
     this.loadMoreItems();
   }
-
   @HostListener('window:scroll', ['$event'])
   onScroll(event: any): void {
     const windowHeight = 'innerHeight' in window ? window.innerHeight : document.documentElement.offsetHeight;
@@ -27,16 +26,17 @@ export class ListModalComponent implements OnInit {
       this.loadMoreItems();
     }
   }
-  constructor(private el: ElementRef) {}
+  constructor(private el: ElementRef,private router: Router) {}
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   loadMoreItems(): void {
     const start = (this.currentPage - 1) * this.itemsPerPage;
     const end = start + this.itemsPerPage;
-
- 
     this.visibleResults = this.visibleResults.concat(this.results?.slice(start, end) || []);
     this.currentPage++;
+  }
+  redirectToDetailPage(url: string): void {
+    this.router.navigate([''], { queryParams: { url } });
   }
 }

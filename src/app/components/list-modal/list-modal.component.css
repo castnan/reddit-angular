@@ -37,7 +37,8 @@
   }
   
   .custom-block-topics-listing .custom-block-image {
-    width: 200px;
+    width: 150px;
+    height: 150px;
   }
 .scroll-to-top-btn {
   position: fixed;

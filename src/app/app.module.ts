@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FeedMainPage } from './pages/feed-main/feed-main.page';
 import { ListModalComponent } from './components/list-modal/list-modal.component';
 import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     FeedMainPage,
@@ -19,6 +20,7 @@ import { ToastrModule } from 'ngx-toastr';
   ],
   imports: [
     ToastrModule.forRoot(),
+    BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
