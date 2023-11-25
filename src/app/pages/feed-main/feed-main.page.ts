@@ -9,7 +9,7 @@ import { SharedDataService } from '../../services/shared-data.service';
 })
 export class FeedMainPage implements OnInit { 
   results: any[] | undefined;
-  searchData: any[] = [];  // Variável para armazenar os dados
+  searchData: any[] = []; 
 
   constructor(
     private router: Router,

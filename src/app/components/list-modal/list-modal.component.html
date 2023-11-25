@@ -4,12 +4,12 @@
       <i class="bi bi-arrow-up-circle text-white"></i> Rolar para Cima
     </button>
     <div *ngFor="let result of visibleResults">
-      <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5" (click)="redirectToDetailPage(result.data.url)">
+      <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5" (click)="redirectToDetailComments(result.data)">
         <div class="d-flex flex-column flex-sm-row">
           <div class="col-sm-4 mb-3 degrade-green-background custom-block-image-container d-flex align-items-center justify-content-center">
             <img *ngIf="result.snoovatarImg" [src]="result.snoovatarImg" class="custom-block-image img-fluid mb-3 mb-sm-0 mx-auto rounded-circle" alt="">
           </div>          
-          <div class="col-sm-8 mb-3"> <!-- Adicionei a classe col-sm-8 à div -->
+          <div class="col-sm-8 mb-3"> 
             <div class="custom-block-topics-listing-info flex-grow-1">
               <h3 class="mb-2 text-orange">{{ result.data.title }}</h3>
               <div class="d-flex flex-column flex-sm-row">

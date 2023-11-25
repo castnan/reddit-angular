@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, HostListener, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { RedditService } from '../../services/reddit.service';
+import { SharedDataService } from '../../services/shared-data.service';
 
 @Component({
   selector: 'app-list-modal',
@@ -30,7 +31,7 @@ export class ListModalComponent implements OnInit {
     }
   }
 
-  constructor(private el: ElementRef, private router: Router,private redditService: RedditService) {}
+  constructor(private el: ElementRef, private router: Router,private redditService: RedditService,private sharedDataService: SharedDataService) {}
 
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -57,8 +58,8 @@ export class ListModalComponent implements OnInit {
       });
   }
   
-
-  redirectToDetailPage(url: string): void {
-    this.router.navigate(['comments'], { queryParams: { url } });
+  redirectToDetailComments(data: any): void {
+    this.sharedDataService.updatePostData({ data: { children: [data] } });
+    this.router.navigate(['comments'], { queryParams: { subreddit: data.subreddit ,id:data.id} });
   }
 }
