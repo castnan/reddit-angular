@@ -44,6 +44,9 @@
     height: 150px;
   }
 
+  .text-orange{
+    color: #eb6d14;
+  }
   .orange-button  {
     background-color: #eb6d14;
   }
@@ -56,4 +59,15 @@
   z-index: 1000; 
 }
 
-  
+.vertical-line {
+  width: 2px; 
+  height: 100%; 
+  background-color: #ccc; 
+  margin: 0 auto; 
+}
+.degrade-green-background {
+  background: linear-gradient(to bottom, #154922 0%, #77c082 100%);
+  border-radius: 10px;
+}
+
+
