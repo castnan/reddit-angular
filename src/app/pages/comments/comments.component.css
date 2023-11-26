@@ -12,11 +12,29 @@
   border-radius: 8px;
   background-color: #fff;
 }
+.center-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.round-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  margin-right: 10px; 
+}
+
+.card-header{
+  background-color: #eb6d14;
+}
 .avatar-container {
   margin-right: 15px;
 }
-
+.author-info{
+  size: 10px;
+}
 .main-container {
   padding-top: 20px;
 }

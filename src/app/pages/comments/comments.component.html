@@ -1,33 +1,52 @@
 <div class="main-container">
-<div class="post-container">
-    <h2>Autor: {{ authorPost[0]?.data?.author }}</h2>
-    <h4>{{ authorPost[0]?.data?.title }}</h4>
-    <p>{{ authorPost[0]?.data?.selftext }}</p>
-    <div class="row">
-      <div class="col-md-6">
-        <p>Pontuação: {{ authorPost[0]?.data?.ups }}</p>
-      </div>
-      <div class="col-md-6">
-        <p>Número de Comentários: {{ authorPost[0]?.data?.num_comments }}</p>
+  <div class="post-container card mb-3"> <!-- Add mb-3 class for margin-bottom -->
+    <div class="card bg-gradient">
+      <div class="card-header bg-success d-flex align-items-center">
+        <img [src]="snoovatarImg" alt="Snoovatar Image" class="round-avatar" />
+        <h2 class="card-title text-white">Autor: {{ authorPost[0]?.data?.author }}</h2>
+      </div>        
+      <div class="card-body">
+        <h4 class="card-subtitle">{{ authorPost[0]?.data?.title }}</h4>
+        <p class="card-text">{{ authorPost[0]?.data?.selftext }}</p>
+        <div class="row">
+          <div class="col-md-6">
+            <p class="card-text">Pontuação: {{ authorPost[0]?.data?.ups }}</p>
+          </div>
+          <div class="col-md-6">
+            <p class="card-text">Número de Comentários: {{ authorPost[0]?.data?.num_comments }}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <div *ngIf="otherComments.length > 0" class="comments-container">
-    <div *ngFor="let comment of otherComments" class="chat-message d-flex">
-      <div class="avatar-container">
-        <img *ngIf="comment.data.snoovatarImg" [src]="comment.data.snoovatarImg" class="rounded-circle" alt="User Avatar" width="40" height="40">      
-      </div>
-      <div class="message-container flex-grow-1 ml-3">
-        <div class="author-info font-weight-bold">{{ comment.data.author }}</div>
-        <div class="comment-body">{{ comment.data.body }}</div>
-  
-        <div class="counter green-counter" style="font-size: 14px;">Pontuação: {{ comment.data.ups }}</div>
-        <div class="counter green-counter" style="font-size: 14px;">Pontuação: {{ comment.num_comments}}</div>
-
-        <ng-container *ngIf="comment.data.url">
-          <a [href]="comment.data.url" target="_blank" class="btn btn-primary btn-sm d-block mx-auto mt-2">Link Externo</a>
-        </ng-container>
+    <div class="row">
+      <div *ngFor="let comment of otherComments; let i = index" class="col-lg-6 mb-3">
+        <div class="card" style="height: 500px; overflow-y: auto;">
+          <div class="card-header">
+            <div class="avatar-container">
+              <img *ngIf="comment.data.snoovatarImg" [src]="comment.data.snoovatarImg" class="rounded-circle" alt="User Avatar" width="40" height="40">
+            </div>
+            <div class="message-container flex-grow-1 ml-3">
+              <h4 class="author-info font-weight-bold text-white">{{ comment.data.author }}</h4>
+            </div>
+          </div>
+          <div class="card-body text-center">
+            <div class="comment-body">{{ comment.data.body }}</div>
+            <div class="row justify-content-center align-items-center">
+              <div class="col-md-6">
+                <p class="card-text">
+                  <span class="bi bi-trophy" style="font-size: 30px;"></span>
+                </p>
+                <p class="card-text mb-0">Pontuação: {{ authorPost[0]?.data?.ups }}</p>
+              </div>
+            </div>                
+            <ng-container *ngIf="comment.data.url">
+              <a [href]="comment.data.url" target="_blank" class="btn btn-primary btn-sm d-block mx-auto mt-2">Link Externo</a>
+            </ng-container>
+          </div>          
+        </div>
       </div>
     </div>
   </div>
@@ -35,7 +54,7 @@
     <nav aria-label="Page navigation">
       <ul class="pagination">
         <li class="page-item" [class.disabled]="currentPage === 1">
-          <button class="page-link" (click)="loadPage(currentPage - 1)" aria-label="Previous">
+          <button class="page-link" (click)="prevPage()" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
           </button>
         </li>
@@ -43,15 +62,12 @@
           <span class="page-link">Página {{ currentPage }} de {{ totalPages }}</span>
         </li>
         <li class="page-item" [class.disabled]="currentPage === totalPages">
-          <button class="page-link" (click)="loadPage(currentPage + 1)" aria-label="Next">
+          <button class="page-link" (click)="nextPage()" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
           </button>
         </li>
       </ul>
     </nav>
   </div> -->
-  
-
-
   
 </div>
