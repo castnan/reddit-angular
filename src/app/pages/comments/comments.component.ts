@@ -1,4 +1,3 @@
-// comments.component.ts
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -55,6 +54,9 @@ export class CommentsComponent implements OnInit {
                 console.error('Error fetching comments:', error);
             }
         });
+}
+scrollToTop(): void {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 }

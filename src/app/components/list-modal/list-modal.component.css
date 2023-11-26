@@ -44,20 +44,7 @@
     height: 150px;
   }
 
-  .text-orange{
-    color: #eb6d14;
-  }
-  .orange-button  {
-    background-color: #eb6d14;
-  }
-.scroll-to-top-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-}
-.scroll-to-top-btn {
-  z-index: 1000; 
-}
+
 
 .vertical-line {
   width: 2px; 

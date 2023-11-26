@@ -11,6 +11,7 @@ import { ListModalComponent } from './components/list-modal/list-modal.component
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommentsComponent } from './pages/comments/comments.component';
+import { ButtonTopComponent } from './components/button-top/button-top.component';
 @NgModule({
   declarations: [
     FeedMainPage,
@@ -18,7 +19,8 @@ import { CommentsComponent } from './pages/comments/comments.component';
     SearchComponent,
     HomeComponent,
     ListModalComponent,
-    CommentsComponent
+    CommentsComponent,
+    ButtonTopComponent
   ],
   imports: [
     ToastrModule.forRoot(),
