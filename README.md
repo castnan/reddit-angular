@@ -4,7 +4,7 @@ Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli
 
 ## Desenvolvimento
 
-Execute `ng serve` para iniciar o servidor de desenvolvimento. Navegue até `http://localhost:4200/`. A aplicação será recarregada automaticamente se você modificar algum dos arquivos de origem.
+Execute  primeiramente `npm i`, cheque se tem o node instalado, depois`ng serve` para iniciar o servidor de desenvolvimento. Navegue até `http://localhost:4200/`. A aplicação será recarregada automaticamente se você modificar algum dos arquivos de origem.
 
 
 ## Configuração Adicional
