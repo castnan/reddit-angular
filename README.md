@@ -1,27 +1,44 @@
 # RedditAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) na versão 17.0.3.
 
-## Development server
+## Desenvolvimento
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Execute `ng serve` para iniciar o servidor de desenvolvimento. Navegue até `http://localhost:4200/`. A aplicação será recarregada automaticamente se você modificar algum dos arquivos de origem.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Configuração Adicional
 
-## Build
+Certifique-se de ter a versão do  Node.js  18.15.0 instalado em sua máquina.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# RedditAngular
 
-## Running unit tests
+Este projeto Angular é um frontend que consome a API do Reddit para obter informações sobre subreddits e mostrar publicações com algumas informações dos posts
+### Scripts Personalizados
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- `npm start`: Inicia o servidor de desenvolvimento.
+- `npm build`: Constrói o projeto.
+- `npm watch`: Constrói o projeto e observa por mudanças no modo desenvolvimento.
 
-## Running end-to-end tests
+### Dependências
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **Angular**: ^17.0.0
+- **Bootstrap**: ^5.3.2
+- **Bootstrap Icons**: ^1.11.2
+- **Express**: ^4.18.2
+- **Ngx-Toastr**: ^18.0.0
+- **RxJS**: ~7.8.0
+- **Zone.js**: ~0.14.2
 
-## Further help
+### Dependências de Desenvolvimento
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **Angular CLI**: ^17.0.3
+- **TypeScript**: ~5.2.2
+- **@types/express**: ^4.17.17
+- **@types/jasmine**: ~5.1.0
+- **@types/node**: ^18.18.13
+- **Jasmine Core**: ~5.1.0
+- **Karma**: ~6.4.0
+- **Karma Chrome Launcher**: ~3.2.0
+- **Karma Coverage**: ~2.2.0
+- **Karma Jasmine**: ~5.1.0
