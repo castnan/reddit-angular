@@ -33,7 +33,7 @@ export class SearchComponent {
     }
   }
   startListening(): void {
-    if ('webkitSpeechRecognition' in window) {
+    if ('webkitSpeechRecognition' in window) { /* Este trecho foi adaptado de:https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionAlternative/transcript  */
       const recognition = new (window as any).webkitSpeechRecognition();
 
       recognition.onresult = (event: any) => {
